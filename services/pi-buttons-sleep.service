@@ -1,0 +1,10 @@
+[Unit]
+Description=Listen for Sleep
+
+[Service]
+Type=simple
+ExecStart=/opt/pi-io/power
+ExecStop=kill -2 `pidof power`
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Listen for WPS Button
+Requires=network.target
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/pi-io/wps --script /opt/wps/wps-config.sh
+
+[Install]
+WantedBy=multi-user.target
